@@ -35,7 +35,7 @@ function MyTabs() {
                                 <MaterialCommunityIcons
                                     name="wallet"
                                     size={28}
-                                    color={focused ? "#f6b819" : "#a3a3a3"}
+                                    color={focused ? "orange" : "#30BFE2"}
                                 />
                             )
                         }
@@ -48,7 +48,7 @@ function MyTabs() {
                                 <MaterialCommunityIcons
                                     name="qrcode-scan"
                                     size={25}
-                                    color={focused ? "#f6b819" : "#a3a3a3"}
+                                    color={focused ? "orange" : "#30BFE2"}
                                 />
                             )
                         }
@@ -61,7 +61,7 @@ function MyTabs() {
                                 <SimpleLineIcons
                                     name="globe"
                                     size={25}
-                                    color={focused ? "#f6b819" : "#a3a3a3"}
+                                    color={focused ? "orange" : "#30BFE2"}
                                 />
                             )
                         },
@@ -76,7 +76,7 @@ function MyTabs() {
                                 <MaterialIcons
                                     name="loop"
                                     size={25}
-                                    color={focused ? "#f6b819" : "#a3a3a3"}
+                                    color={focused ? "orange" : "#30BFE2"}
                                 />
                             )
                         }
@@ -89,7 +89,7 @@ function MyTabs() {
                                 <Ionicons
                                     name="settings-sharp"
                                     size={25}
-                                    color={focused ? "#f6b819" : "#a3a3a3"}
+                                    color={focused ? "orange" : "#30BFE2"}
                                 />
                             )
                         }

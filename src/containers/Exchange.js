@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, TextInput, TouchableOpacity, ScrollView, FlatList ,Image} from "react-native"
+import { View, Text, TextInput, TouchableOpacity, ScrollView, FlatList, Image } from "react-native"
 import Feather from "react-native-vector-icons/Feather"
 import { vh, vw } from "../constants"
 
@@ -12,11 +12,15 @@ const Exchange = () => {
         { name: 'USDT20', value: '0.00 USDT20' },
     ])
     const [showModal, setShowModal] = useState(false)
-    const [pay,setPay] = useState('')
-    const [get,setGet] = useState('')
+    const [pay, setPay] = useState('')
+    const [get, setGet] = useState('')
+    const handleChange = (text) => {
+        setPay(text)
+        // setGet(2)
+    }
     return (
         <View style={{ backgroundColor: "#eeeeee", flex: 1 }}>
-            <View style={{ backgroundColor: 'orange', alignItems: 'center', flex: 0.15 }}><Text style={{ color: '#fff', fontSize: 20, fontWeight: 'bold', marginVertical: vh * 0.03 }}>Exchange</Text></View>
+            <View style={{ backgroundColor: 'orange', alignItems: 'center', flex: 0.12, justifyContent: 'center' }}><Text style={{ color: '#fff', fontSize: 20, fontWeight: 'bold', alignItems: 'center', alignSelf: 'center' }}>Exchange</Text></View>
             <View style={{ backgroundColor: '#fff', paddingHorizontal: vw * 0.02, borderRadius: 8, marginHorizontal: vw * 0.04, marginTop: vh * 0.08, paddingVertical: vh * 0.01, flex: 0.6 }}>
                 <View style={{ flexDirection: 'row', paddingBottom: 3 }}>
                     <Feather
@@ -29,14 +33,13 @@ const Exchange = () => {
                 <View style={{ backgroundColor: '#e0e0e0', paddingHorizontal: 10, borderRadius: 5, paddingVertical: 10, flexDirection: 'row' }}>
                     <View>
                         <Text>You Pay</Text>
-                        <TextInput placeholder="0.00" value={pay} onChangeText={(text)=>{
-                            setPay(text)
-                            setGet(2)
-                        }}></TextInput>
+                        <TextInput placeholder="0.00" value={pay} onChangeText={(text) => {handleChange(text) }}
+                            keyboardType='phone-pad'
+                        ></TextInput>
                         <Text >Balance : 0.00000000</Text>
                     </View>
-                    <View style={{  paddingTop: vh * 0.025, marginLeft: vw * 0.08 }} >
-                    <Image source={require('../asests/logo.jpg')} style={{width:35,height:35,borderRadius:25}} />
+                    <View style={{ paddingTop: vh * 0.025, marginLeft: vw * 0.08 }} >
+                        <Image source={require('../asests/logo.jpg')} style={{ width: 35, height: 35, borderRadius: 25 }} />
                     </View>
                     <Text style={{ paddingTop: vh * 0.035, marginLeft: vw * 0.02 }}>ETH</Text>
                     <TouchableOpacity style={{ paddingTop: vh * 0.035, marginLeft: vw * 0.05, marginTop: -5 }} onPress={_ => setShowModal(true)}>
@@ -50,13 +53,13 @@ const Exchange = () => {
                 <View style={{ backgroundColor: '#e0e0e0', paddingHorizontal: 10, borderRadius: 5, paddingVertical: 10, flexDirection: 'row', marginTop: 5 }}>
                     <View>
                         <Text>You Are Getting</Text>
-                        <TextInput placeholder="0.00"  value={pay*0.021}></TextInput>
+                        <TextInput placeholder="0.00" value={pay}></TextInput>
                         <Text >Balance : 0.00000000</Text>
                     </View>
                     <View style={{ paddingTop: vh * 0.025, marginLeft: vw * 0.08 }} >
-                        <Image source={require('../asests/logo.jpg')} style={{width:35,height:35,borderRadius:25}} />
+                        <Image source={require('../asests/logo.jpg')} style={{ width: 35, height: 35, borderRadius: 25 }} />
                     </View>
-                    <Text style={{ paddingTop: vh * 0.035, marginLeft: vw * 0.02}}>BTC</Text>
+                    <Text style={{ paddingTop: vh * 0.035, marginLeft: vw * 0.02 }}>BTC</Text>
                     <TouchableOpacity style={{ paddingTop: vh * 0.035, marginLeft: vw * 0.05, marginTop: -5 }} onPress={_ => setShowModal(true)}>
                         <Feather
                             name="chevron-down"
